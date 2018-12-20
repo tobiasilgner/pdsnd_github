@@ -14,4 +14,9 @@ new_york_city.csv
 washington.csv
 
 ### Credits
-I would like to thank my great instructors at Udacity.com
+I would like to thank my great instructors at Udacity.com:
+- Josh Bernhard
+- Derek Steer
+- Juno Lee
+- Richard Kalehoff
+- Karl Krueger
