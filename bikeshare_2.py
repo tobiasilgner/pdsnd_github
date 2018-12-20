@@ -120,7 +120,6 @@ def time_stats(df):
     popular_hour = df['hour'].mode()[0]
     print('Most popular start hour:', popular_hour)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -143,7 +142,6 @@ def station_stats(df):
     popular_trip = df['Trip'].mode()[0]
     print('Most popular trip:', popular_trip)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -163,7 +161,6 @@ def trip_duration_stats(df):
     mean_travel_time = df['Travel Time'].mean().seconds / 60
     print('Mean travel time: ', mean_travel_time, 'minutes')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -197,7 +194,6 @@ def user_stats(df):
     else:
         print('No gender data available')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
