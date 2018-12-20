@@ -38,7 +38,7 @@ def get_filters():
 
     while True:
         try:
-            month = input('\nPlease select the month you want to filter by. Available months are: January, February, March, April, May, and June. If you don\'t want to filter by month select all:\n').lower()
+            month = input('\nPlease select the month you want to filter by (January - June). If you don\'t want to filter by month select all:\n').lower()
         except:
             print('No valid input. Please try again')
             continue
