@@ -20,3 +20,6 @@ I would like to thank my great instructors at Udacity.com:
 - Juno Lee
 - Richard Kalehoff
 - Karl Krueger
+
+### Next Steps
+I am looking forward to tackle more challenges in the Data Analyst Nanodegree
