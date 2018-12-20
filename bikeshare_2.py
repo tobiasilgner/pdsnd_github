@@ -87,7 +87,7 @@ def load_data(city, month, day):
     df['End Time'] = pd.to_datetime(df['End Time'])
 
     df['month'] = df['Start Time'].dt.month
-    df['day_of_week'] = df['Start Time'].dt.weekday_name
+    df['weekday'] = df['Start Time'].dt.weekday_name
 
     if month != 'all':
         months = ['january', 'february', 'march', 'april', 'may', 'june']
@@ -95,7 +95,7 @@ def load_data(city, month, day):
         df = df[df['month'] == month]
 
     if day != 'all':
-        df = df[df['day_of_week'] == day.title()]
+        df = df[df['weekday'] == day.title()]
 
     return df
 
@@ -112,7 +112,7 @@ def time_stats(df):
     print('Most popular month:', months[popular_month - 1].title())
 
     # display the most common day of week
-    popular_day = df['day_of_week'].mode()[0]
+    popular_day = df['weekday'].mode()[0]
     print('Most popular day:', popular_day)
 
     # display the most common start hour
@@ -120,7 +120,6 @@ def time_stats(df):
     popular_hour = df['hour'].mode()[0]
     print('Most popular start hour:', popular_hour)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -143,7 +142,6 @@ def station_stats(df):
     popular_trip = df['Trip'].mode()[0]
     print('Most popular trip:', popular_trip)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -163,7 +161,6 @@ def trip_duration_stats(df):
     mean_travel_time = df['Travel Time'].mean().seconds / 60
     print('Mean travel time: ', mean_travel_time, 'minutes')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -197,17 +194,20 @@ def user_stats(df):
     else:
         print('No gender data available')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
 def raw_data(df):
+    i = 1
+    j = 6
     while True:
         raw = input('\nWould you like to see 5 lines of raw data? Enter yes or no.\n')
         if raw.lower() != 'yes':
             break
         else:
-            print(df.head(5))
+            print(df.iloc[i:j])
+            i += 5
+            j += 5
 
 
 def main():
