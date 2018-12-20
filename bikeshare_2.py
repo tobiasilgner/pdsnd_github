@@ -202,12 +202,16 @@ def user_stats(df):
 
 
 def raw_data(df):
+    i = 1
+    j = 6
     while True:
         raw = input('\nWould you like to see 5 lines of raw data? Enter yes or no.\n')
         if raw.lower() != 'yes':
             break
         else:
-            print(df.head(5))
+            print(df.iloc[i:j])
+            i += 5
+            j += 5
 
 
 def main():
